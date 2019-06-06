@@ -1,2 +1,30 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[The Blog]]></title><description><![CDATA[A blog where I talk about things that are relevant to me.]]></description><link>https://gatsby-starter-blog-demo.netlify.com/</link><generator>RSS for Node</generator><lastBuildDate>Sun, 05 May 2019 00:41:18 GMT</lastBuildDate><item><title><![CDATA[Hello World]]></title><description><![CDATA[This is the first post on my new blog, how exciting!  Stay tuned for more interesting writing on topics like programming, technology…]]></description><link>https://gatsby-starter-blog-demo.netlify.com//hello-world/</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com//hello-world/</guid><pubDate>Thu, 25 Apr 2019 02:37:34 GMT</pubDate><content:encoded>&lt;p&gt;This is the first post on my new blog, how exciting! &lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[The Blog]]></title><description><![CDATA[A blog where I talk about things that are relevant to me.]]></description><link>https://gatsby-starter-blog-demo.netlify.com/</link><generator>RSS for Node</generator><lastBuildDate>Thu, 06 Jun 2019 02:36:45 GMT</lastBuildDate><item><title><![CDATA[Optimizing your Tree Style Tab experience with groups]]></title><description><![CDATA[If you’re using  Firefox  and have the  Tree Style Tab   (TST)  extension installed, you can create a TST group by navigating to the…]]></description><link>https://gatsby-starter-blog-demo.netlify.com//firefox-treestyletab-tip/</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com//firefox-treestyletab-tip/</guid><pubDate>Thu, 06 Jun 2019 02:13:51 GMT</pubDate><content:encoded>&lt;p&gt;If you’re using &lt;a href=&quot;https://www.mozilla.org/en-US/firefox/new/&quot;&gt;Firefox&lt;/a&gt; and have the &lt;a href=&quot;https://addons.mozilla.org/en-US/firefox/addon/tree-style-tab/&quot;&gt;Tree Style Tab&lt;/a&gt; &lt;em&gt;(TST)&lt;/em&gt; extension installed, you can create a TST group by navigating to the following URL: &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;about:treestyletab-group?title=MyGroup&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;TST groups are useful for organization purposes because they give you an &lt;em&gt;empty&lt;/em&gt;
+space to throw bunch of browser tabs at.&lt;/p&gt;
+&lt;p&gt;If you’re on Linux or Mac you can speed up the process of creating a TST group
+by copying the following into an executable shell script and placing it
+in your &lt;code class=&quot;language-text&quot;&gt;$PATH&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;#!/usr/bin/fish&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;#&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;# Usage: tabgroup ARG1 ARG2...ARGN&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;#&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;# Purpose: Open up one or more temporary treestyletab&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;# groups in Firefox with the specified names.&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; tabgroup
+  &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; not count &lt;span class=&quot;token variable&quot;&gt;$argv&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; /dev/null
+    &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt;
+  end
+  &lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt; title &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;$argv&lt;/span&gt;
+    firefox &lt;span class=&quot;token string&quot;&gt;&quot;about:treestyletab-group?title=&lt;span class=&quot;token variable&quot;&gt;$title&lt;/span&gt;&quot;&lt;/span&gt;
+  end
+end&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; Make sure you have &lt;a href=&quot;https://fishshell.com/&quot;&gt;fish shell&lt;/a&gt; installed
+otherwise you won’t able to run this script.&lt;/p&gt;
+&lt;p&gt;Once you have the script ready to go, you can pop open a terminal and create either:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;A single TST group:&lt;/strong&gt; &lt;code class=&quot;language-text&quot;&gt;tabgroup mytabgroup&lt;/code&gt;  &lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Multiple TST groups:&lt;/strong&gt; &lt;code class=&quot;language-text&quot;&gt;tabgroup groupone grouptwo groupthree&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Hello World]]></title><description><![CDATA[This is the first post on my new blog, how exciting!  Stay tuned for more interesting writing on topics like programming, technology…]]></description><link>https://gatsby-starter-blog-demo.netlify.com//hello-world/</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com//hello-world/</guid><pubDate>Thu, 25 Apr 2019 02:37:34 GMT</pubDate><content:encoded>&lt;p&gt;This is the first post on my new blog, how exciting! &lt;/p&gt;
 &lt;p&gt;Stay tuned for more interesting writing on topics like programming, technology, productivity, and more.&lt;/p&gt;</content:encoded></item></channel></rss>
