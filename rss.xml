@@ -1,4 +1,49 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[The Blog]]></title><description><![CDATA[A blog where I talk about things that are relevant to me.]]></description><link>https://gatsby-starter-blog-demo.netlify.com/</link><generator>RSS for Node</generator><lastBuildDate>Sun, 21 Jul 2019 19:43:37 GMT</lastBuildDate><item><title><![CDATA[Readers will scale your organization]]></title><description><![CDATA[Introduction A typical organization has two kinds of workers: readers and non-readers. Readers take the time to consume written information…]]></description><link>https://gatsby-starter-blog-demo.netlify.com//readers-scale-organizations/</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com//readers-scale-organizations/</guid><pubDate>Sun, 21 Jul 2019 19:01:09 GMT</pubDate><content:encoded>&lt;h1&gt;Introduction&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[The Blog]]></title><description><![CDATA[A blog where I talk about things that are relevant to me.]]></description><link>https://gatsby-starter-blog-demo.netlify.com/</link><generator>RSS for Node</generator><lastBuildDate>Sat, 02 Nov 2019 04:07:24 GMT</lastBuildDate><item><title><![CDATA[Proxy API requests in local development]]></title><description><![CDATA[When building a web application these days there’s a general pattern of
+separating it into: A front-end server which serves your application…]]></description><link>https://gatsby-starter-blog-demo.netlify.com//local-development-devproxy/</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com//local-development-devproxy/</guid><pubDate>Sat, 02 Nov 2019 03:50:21 GMT</pubDate><content:encoded>&lt;p&gt;When building a web application these days there’s a general pattern of
+separating it into:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;A front-end server which serves your application&lt;/li&gt;
+&lt;li&gt;A back-end server which serves your API (REST, or something else)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Let’s say that your developing an application locally with your servers
+listening on the following hosts:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Front-end -&gt; &lt;code class=&quot;language-text&quot;&gt;http://localhost:3000&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Back-end -&gt; &lt;code class=&quot;language-text&quot;&gt;http://localhost:4000&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;From your internet browser you’ll navigate to &lt;code class=&quot;language-text&quot;&gt;http:localhost:3000&lt;/code&gt; so that you
+can access and interact with your application. However, if your application
+tries to reach out to the back-end server API, you’ll probably see an error
+message that looks something like:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;No &amp;#39;Access-Control-Allow-Origin&amp;#39; header is present on the requested resource. 
+Origin &amp;#39;http://localhost:3000&amp;#39; is therefore not allowed access.&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;This is because &lt;code class=&quot;language-text&quot;&gt;http://localhost:3000&lt;/code&gt; and &lt;code class=&quot;language-text&quot;&gt;http:localhost:4000&lt;/code&gt; are considered
+different hosts due to their differing port numbers. Your browser, for security
+reasons, is preventing the application that you’re looking at (served via your
+front-end server) from reaching out to, from its perspective, some unknown and
+potentially hostile server on the internet (served via your back-end server).&lt;/p&gt;
+&lt;p&gt;If you do some digging you’ll find that you can solve the problem by:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Adding the &lt;code class=&quot;language-text&quot;&gt;Access-Control-Allow-Origin: *&lt;/code&gt; header to the http requests made
+from your front-end server&lt;/li&gt;
+&lt;li&gt;Importing a library and using it to scaffold basic CORS on your back-end
+server&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;But wait! Since this is in local development, there’s a better way to solve the
+problem. You can have your front-end server proxy API requests to your back-end
+server.&lt;/p&gt;
+&lt;p&gt;The idea behind proxying here is that your browser will only ever reach out to
+&lt;code class=&quot;language-text&quot;&gt;http://localhost:3000&lt;/code&gt;. However, you can then have your front-end server pass
+API requests through to &lt;code class=&quot;language-text&quot;&gt;http://localhost:4000&lt;/code&gt; and return whatever the back-end
+server responds with to the application running in your browser. This way
+your browser will never know that another server even exists. It’ll have nothing
+to complain about.&lt;/p&gt;
+&lt;p&gt;Modern web frameworks all have different ways of setting up this kind of
+proxying. For example, if you’re using &lt;a href=&quot;https://vuejs.org/&quot;&gt;Vue.js&lt;/a&gt;, then you
+can add &lt;a href=&quot;https://cli.vuejs.org/config/#devserver-proxy&quot;&gt;this&lt;/a&gt; option to your
+&lt;code class=&quot;language-text&quot;&gt;vue.config.js&lt;/code&gt; file, and you’re good to go!&lt;/p&gt;
+&lt;p&gt;I highly recommend this approach as it’s much easier than fiddling with CORS,
+especially if it won’t even be an issue for you in production.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Readers will scale your organization]]></title><description><![CDATA[Introduction A typical organization has two kinds of workers: readers and non-readers. Readers take the time to consume written information…]]></description><link>https://gatsby-starter-blog-demo.netlify.com//readers-scale-organizations/</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com//readers-scale-organizations/</guid><pubDate>Sun, 21 Jul 2019 19:01:09 GMT</pubDate><content:encoded>&lt;h1&gt;Introduction&lt;/h1&gt;
 &lt;p&gt;A typical organization has two kinds of workers: readers and non-readers. Readers take the time to consume written information like emails, design documents, wiki pages, and code, before proceeding in further communication. Non-readers, however, will skip that step of the communication process and either start organizing meetings or begin working on their tasks. This leads to a lot of unnecessary meetings and rework.&lt;/p&gt;
 &lt;p&gt;Organizations need more readers and less non-readers, especially in the age of remote, asynchronous work.&lt;/p&gt;
 &lt;h1&gt;The symptoms of non-reader majority organizations&lt;/h1&gt;
